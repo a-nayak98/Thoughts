@@ -49,7 +49,7 @@ const Navbar = (props) => {
               <div className="nav-logo">
                 <Link className="a-tag" to={"/"}>
                   <img
-                    src="../../public/images/logo1-removebg-preview.png"
+                    src="/images/logo1-removebg-preview.png"
                     alt=""
                   />
                   {/* <h1 style={{fontWeight:"900", fontSize:'2em'}}>Thoughts!</h1> */}
