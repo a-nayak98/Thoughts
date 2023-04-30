@@ -579,8 +579,8 @@ main {
     -moz-column-count: 4;
     column-count: 4;
     width: 100%;
-    // display: flex;
-    // flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
     -webkit-column-gap: 20px;
     -moz-column-gap: 20px;
     column-gap: 30px;
@@ -588,7 +588,7 @@ main {
 
   // Styling For Single Post
   .post {
-    // width: 23%;
+    width: 23%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
