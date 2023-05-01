@@ -7,7 +7,7 @@ const Placeholders = () => {
   return (
     <div>
       <Card style={{ width: "18rem", marginBottom: "2em" }}>
-        <Card.Img variant="top" src="../../public/images/loading.gif" />
+        <Card.Img variant="top" src="/images/loading.gif" />
         <Card.Body>
           <Placeholder as={Card.Title} animation="glow">
             <Placeholder xs={6} />
