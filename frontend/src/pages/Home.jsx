@@ -23,7 +23,7 @@ const Home = () => {
 
   useEffect(() => {
     const getPosts = async () => {
-      const res = await axios.get(`${ApiUrl}api/posts-all`);
+      const res = await axios.get(`${ApiUrl}/api/posts-all`);
       // console.log(res.data.data);
       var myData = res.data.data;
       setMyPostData(myData);
