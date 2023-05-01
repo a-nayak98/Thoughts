@@ -26,7 +26,9 @@ const CreatePost = () => {
 
   const { handleShow, formData, setFormData } = useContext(ModalContext);
   const navigate = useNavigate();
-  const ApiUrl = import.meta.env.VITE_API_BASE_URL;
+  // const ApiUrl = import.meta.env.VITE_API_BASE_URL;
+  const ApiUrl = "https://thoughts-b9rq.onrender.com";
+
 
   // this is for taking the reference of the current element using useRef
   const inputFile = useRef(null);

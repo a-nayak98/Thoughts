@@ -17,7 +17,8 @@ const Home = () => {
   const [postPerPage, setPostPerPage] = useState(8);
 
   // const baseApiUrl = process.env.REACT_APP_API_BASE_URL;
-  const ApiUrl = import.meta.env.VITE_API_BASE_URL;
+  // const ApiUrl = import.meta.env.VITE_API_BASE_URL;
+  const ApiUrl = "https://thoughts-b9rq.onrender.com";
   // console.log(ApiUrl, "Enviornment variable");
 
   useEffect(() => {

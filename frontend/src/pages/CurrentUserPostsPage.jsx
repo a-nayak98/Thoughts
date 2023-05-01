@@ -13,7 +13,9 @@ const CurrentUserPostsPage = () => {
   const { user, formData, setFormData, handleShow } = useContext(ModalContext);
   const navigate = useNavigate();
 
-  const ApiUrl = import.meta.env.VITE_API_BASE_URL;
+  // const ApiUrl = import.meta.env.VITE_API_BASE_URL;
+  const ApiUrl = "https://thoughts-b9rq.onrender.com";
+  
   var userId = user._id;
   // console.log(userId);
   const getPosts = async () => {

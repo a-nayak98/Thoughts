@@ -31,7 +31,8 @@ const SinglePostPage = () => {
   // state for like icon bg change
   const [isLiked, setIsLiked] = useState(false);
 
-  const ApiUrl = import.meta.env.VITE_API_BASE_URL;
+  // const ApiUrl = import.meta.env.VITE_API_BASE_URL;
+  const ApiUrl = "https://thoughts-b9rq.onrender.com";
 
   const saveFormData = async (e) => {
     try {
