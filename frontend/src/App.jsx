@@ -55,11 +55,14 @@ function App() {
   const handleUser = (userData) => setUser(userData);
   let token = localStorage.getItem("userToken");
 
+  // Api Url
+  const ApiUrl = "https://thoughts-b9rq.onrender.com";
+
   const userData = async () => {
     try {
       // api call for get user rote(/api/getUser)
       // console.log(token);
-      const response = await axios.get("http://localhost:3333/api/get-user", {
+      const response = await axios.get(`${ApiUrl}/api/get-user`, {
         headers: {
           token: token,
         },
