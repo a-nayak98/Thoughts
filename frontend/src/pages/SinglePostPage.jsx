@@ -49,7 +49,7 @@ const SinglePostPage = () => {
           userId: user._id,
           createdAt: new Date(),
         };
-        const res = await axios.post(`${ApiUrl}api/save-comment`, payload, {
+        const res = await axios.post(`${ApiUrl}/api/save-comment`, payload, {
           headers: {
             token: token,
           },
@@ -85,7 +85,7 @@ const SinglePostPage = () => {
   // calling api using paramField as id
   const getSinglePost = async () => {
     try {
-      const res = await axios.get(`${ApiUrl}api/single-post/${paramField}`);
+      const res = await axios.get(`${ApiUrl}/api/single-post/${paramField}`);
       // console.log(res.data.data);
 
       const myPost = res.data.data;
@@ -129,7 +129,7 @@ const SinglePostPage = () => {
           body: data.body,
           id: data._id,
         };
-        const res = await axios.patch(`${ApiUrl}api/edit-comment`, payload, {
+        const res = await axios.patch(`${ApiUrl}/api/edit-comment`, payload, {
           headers: {
             token: token,
           },
@@ -163,7 +163,7 @@ const SinglePostPage = () => {
         console.log(axiosConfig);
 
         const res = await axios.delete(
-          `${ApiUrl}api/delete-comment`,
+          `${ApiUrl}/api/delete-comment`,
           axiosConfig
           // payload
         );
@@ -197,7 +197,7 @@ const SinglePostPage = () => {
 
         setTimeout(() => {
           axios
-            .post(`${ApiUrl}api/liked`, payload, {
+            .post(`${ApiUrl}/api/liked`, payload, {
               headers: { token: token },
             })
             .then((res) => {
@@ -218,7 +218,7 @@ const SinglePostPage = () => {
         };
 
         axios
-          .delete(`${ApiUrl}api/unLiked`, axiosConfig)
+          .delete(`${ApiUrl}/api/unLiked`, axiosConfig)
           .then((res) => {
             console.log(res);
           })
@@ -238,7 +238,7 @@ const SinglePostPage = () => {
         "Your description about the page or site here to set dynamically For the post i think this is correct way to do it.");
     document.getElementsByTagName(
       "META"
-    )[4].content = `http://blogBabu.com/single-post?id=${postData._id}`;
+    )[4].content = `https://magical-pie-1ae492.netlify.app/single-post?id=${postData._id}`;
   }, []);
 
   return (
@@ -268,7 +268,7 @@ const SinglePostPage = () => {
             <div className="single-post-user">
               <div className="user-photo">
                 {!postData?.user?.avatar ? (
-                  <img src={"../../public/images/profile.jpg"} />
+                  <img src={"/images/profile.jpg"} />
                 ) : (
                   <img src={postData?.user?.avatar} alt="" />
                 )}

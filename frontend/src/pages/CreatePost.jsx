@@ -29,7 +29,6 @@ const CreatePost = () => {
   // const ApiUrl = import.meta.env.VITE_API_BASE_URL;
   const ApiUrl = "https://thoughts-b9rq.onrender.com";
 
-
   // this is for taking the reference of the current element using useRef
   const inputFile = useRef(null);
   const form_title = useRef(null);
@@ -115,7 +114,7 @@ const CreatePost = () => {
         setIsLoading(true);
 
         const resUrl = await axios.post(
-          `${ApiUrl}api/upload-image`,
+          `${ApiUrl}/api/upload-image`,
           uploadFile
         );
 
@@ -131,7 +130,7 @@ const CreatePost = () => {
 
           //loader start =========
 
-          let res = await axios.post(`${ApiUrl}api/posts`, payload, {
+          let res = await axios.post(`${ApiUrl}/api/posts`, payload, {
             headers: {
               token: token,
             },
@@ -189,7 +188,7 @@ const CreatePost = () => {
           };
           //  loader start =========
           setIsLoading(true);
-          const res = await axios.patch(`${ApiUrl}api/edit-post`, payload);
+          const res = await axios.patch(`${ApiUrl}/api/edit-post`, payload);
           console.log(res);
           if (res.status === 202) {
             // loader end ======
@@ -203,7 +202,7 @@ const CreatePost = () => {
           uploadFile.append("image", formData.image);
 
           const resUrl = await axios.post(
-            `${ApiUrl}api/upload-image`,
+            `${ApiUrl}/api/upload-image`,
             uploadFile
           );
           let imageUrl = resUrl.data.data;
@@ -218,7 +217,7 @@ const CreatePost = () => {
 
             //loader start =========
             setIsLoading(true);
-            let res = await axios.patch(`${ApiUrl}api/edit-post`, payload);
+            let res = await axios.patch(`${ApiUrl}/api/edit-post`, payload);
             if (res.status === 202) {
               // lodaer end ======
               setIsLoading(false);

@@ -15,15 +15,13 @@ const CurrentUserPostsPage = () => {
 
   // const ApiUrl = import.meta.env.VITE_API_BASE_URL;
   const ApiUrl = "https://thoughts-b9rq.onrender.com";
-  
+
   var userId = user._id;
   // console.log(userId);
   const getPosts = async () => {
     try {
       console.log(userId, "user ra id.. ");
-      const res = await axios.get(
-        `${ApiUrl}api/current-user-post/${userId}`
-      );
+      const res = await axios.get(`${ApiUrl}/api/current-user-post/${userId}`);
       // console.log(res.data.data, "line 23 -cupp");
       var myData = res.data.data;
       setCurrentUserPosts(myData);
@@ -36,9 +34,7 @@ const CurrentUserPostsPage = () => {
     try {
       const id = data._id;
       console.log(id, "user ra id.");
-      const res = await axios.delete(
-        `${ApiUrl}api/delete-post/${id}`
-      );
+      const res = await axios.delete(`${ApiUrl}/api/delete-post/${id}`);
       console.log(res);
       if (res.status === 204) {
         toast.success("Post Deleted Successfully.");
@@ -105,7 +101,19 @@ const CurrentUserPostsPage = () => {
             <div className="row">
               <div className="col-lg-12">
                 {userPosts.length === 0 ? (
-                  <p style={{color:"red",fontSize: "1.5em",fontWeight:"700" ,margin: '0',width:'100%',textAlign:'center'}}>You Have Not Posted Anything Yet !!!! Click On Create Post To Post Anything.</p>
+                  <p
+                    style={{
+                      color: "red",
+                      fontSize: "1.5em",
+                      fontWeight: "700",
+                      margin: "0",
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    You Have Not Posted Anything Yet !!!! Click On Create Post
+                    To Post Anything.
+                  </p>
                 ) : (
                   userPosts?.map((el) => {
                     return (
