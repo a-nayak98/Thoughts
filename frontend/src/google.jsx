@@ -7,6 +7,7 @@ import { ModalContext } from "./context/ModalContext";
 
 const google = () => {
   const { handleUser, handleClose } = useContext(ModalContext);
+  const ApiUrl = "https://thoughts-b9rq.onrender.com";
 
   return (
     <GoogleLogin
@@ -19,10 +20,7 @@ const google = () => {
           avatar: userDetails.picture,
         };
         // api call
-        let response = await axios.post(
-          "http://localhost:3333/api/user",
-          payload
-        );
+        let response = await axios.post(`${ApiUrl}/api/user`, payload);
         // saving the user on client
         const userData = response.data.data;
         handleUser(userData);
